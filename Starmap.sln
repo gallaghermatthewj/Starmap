@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceGraphicsToolkit", "SpaceGraphicsToolkit.csproj", "{079973EF-0B18-915B-FACF-CE65A899A35E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{9B0075F6-AF24-7FE3-8D39-CA8BECC8BE17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{5E72DF12-B0D7-E838-8EC0-BB2090311F19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{079973EF-0B18-915B-FACF-CE65A899A35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079973EF-0B18-915B-FACF-CE65A899A35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079973EF-0B18-915B-FACF-CE65A899A35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079973EF-0B18-915B-FACF-CE65A899A35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0075F6-AF24-7FE3-8D39-CA8BECC8BE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0075F6-AF24-7FE3-8D39-CA8BECC8BE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0075F6-AF24-7FE3-8D39-CA8BECC8BE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0075F6-AF24-7FE3-8D39-CA8BECC8BE17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E72DF12-B0D7-E838-8EC0-BB2090311F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E72DF12-B0D7-E838-8EC0-BB2090311F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E72DF12-B0D7-E838-8EC0-BB2090311F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E72DF12-B0D7-E838-8EC0-BB2090311F19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
