@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StarData : MonoBehaviour
 {
+    private Color[] clusterColors = { Color.grey, Color.blue, Color.cyan, Color.green, Color.yellow, Color.magenta, Color.red, Color.white};
+
     private string starName;
     private string starNumber;
     private string starSpectra;
@@ -15,6 +17,8 @@ public class StarData : MonoBehaviour
     private Vector3 starVelocity;
     private Color colorToUse;
     private bool isRefreshing;
+    public int clusterIndex;
+
 
     public GameObject textCanvas;
     public Text starNameT;
@@ -29,6 +33,9 @@ public class StarData : MonoBehaviour
     public LineRenderer velocityLineRenderer;
     public LineRenderer constellationLineRenderer;
     public StarGenerator starGen;
+
+    public Image clusterImage;
+    
 
 
     public string StarName { get => starName; set { starName = value; starNameT.text = StarName; } }
@@ -164,6 +171,11 @@ public class StarData : MonoBehaviour
         starMagnitudeT.gameObject.SetActive(!starGen.ShowNameOnly);
         starAbsoluteMagnitudeT.gameObject.SetActive(!starGen.ShowNameOnly);
         starLuminosityT.gameObject.SetActive(!starGen.ShowNameOnly);
+        clusterImage.gameObject.SetActive(starGen.ShowClusterColors);
+        if (starGen.ShowClusterColors)
+        {
+            clusterImage.color = clusterColors[clusterIndex - 1];
+        }
     }
 
     // Update is called once per frame

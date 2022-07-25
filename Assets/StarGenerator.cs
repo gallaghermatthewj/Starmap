@@ -7,6 +7,8 @@ using System;
 
 public class StarGenerator : MonoBehaviour
 {
+    public string filePath = "Assets\\starlist.csv";
+
     // Start is called before the first frame update
     List<StarValues> values;
     public GameObject starPrefab;
@@ -46,6 +48,8 @@ public class StarGenerator : MonoBehaviour
     private bool showConstellationLines;
     [SerializeField]
     private bool showNamelessStars;
+    [SerializeField]
+    private bool showClusterColors;
 
     public bool GlobalSettingUpdated()
     {
@@ -85,6 +89,8 @@ public class StarGenerator : MonoBehaviour
     public bool ShowVelocityVectors { get => showVelocityVectors; set { showVelocityVectors = value; resetUpdateTrigger(); } }
     public bool ShowConstellationLines { get => showConstellationLines; set { showConstellationLines = value; resetUpdateTrigger(); } }
 
+    public bool ShowClusterColors { get => showClusterColors; set => showClusterColors = value; }
+
     void Start()
     {
         redrawGalaxy();
@@ -106,7 +112,7 @@ public class StarGenerator : MonoBehaviour
 
         if (showNamelessStars)
         {
-            values = File.ReadAllLines("Assets\\hygdata_v3_A.csv")
+            values = File.ReadAllLines(filePath)
                                            .Skip(1)
                                            .Select(v => StarValues.FromCsv(v))
                                            .Where(v => v.dist < DistanceLimit)
@@ -115,7 +121,7 @@ public class StarGenerator : MonoBehaviour
         }
         else
         {
-            values = File.ReadAllLines("Assets\\hygdata_v3_A.csv")
+            values = File.ReadAllLines(filePath)
                                            .Skip(1)
                                            .Select(v => StarValues.FromCsv(v))
                                            .Where(v => v.dist < DistanceLimit && v.proper.Length > 0)
@@ -161,6 +167,7 @@ public class StarGenerator : MonoBehaviour
                 g.GetComponent<StarData>().StarMagnitude = values[i].mag;
                 g.GetComponent<StarData>().StarLuminosity = values[i].lum;
                 g.GetComponent<StarData>().StarVelocity = new Vector3(values[i].vx, values[i].vy, values[i].vz);
+                g.GetComponent<StarData>().clusterIndex = values[i].cluster;
             }
             else
             {
@@ -183,6 +190,7 @@ public class StarGenerator : MonoBehaviour
                 g.GetComponent<StarData>().StarMagnitude = values[i].mag;
                 g.GetComponent<StarData>().StarLuminosity = values[i].lum;
                 g.GetComponent<StarData>().StarVelocity = new Vector3(values[i].vx, values[i].vy, values[i].vz);
+                g.GetComponent<StarData>().clusterIndex = values[i].cluster;
             }
         }
         unnamedObjects.SetActive(showNamelessStars);
@@ -227,6 +235,7 @@ public class StarGenerator : MonoBehaviour
         public string var;
         public float var_min;
         public float var_max;
+        public int cluster;
 
         public static int intNullValueCheck(string value)
         {
@@ -282,6 +291,7 @@ public class StarGenerator : MonoBehaviour
             starValues.var = Convert.ToString(values[34]);
             starValues.var_min = floatNullValueCheck(values[35]);
             starValues.var_max = floatNullValueCheck(values[36]);
+            starValues.hr = intNullValueCheck(values[37]);
             return starValues;
         }
     }
