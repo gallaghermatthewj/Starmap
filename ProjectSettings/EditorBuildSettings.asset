@@ -29,12 +29,18 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/MainMenu.unity
+    guid: 276d2b1f02311b143868cb18691cc304
+  - enabled: 1
+    path: Assets/ECS_StarScene.unity
+    guid: c5fd9fac107d51049b2b9191ae56da59
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 48cbe166ce8bab34e9c442eb3de9eadb,
       type: 2}

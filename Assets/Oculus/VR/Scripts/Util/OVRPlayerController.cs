@@ -12,7 +12,7 @@ permissions and limitations under the License.
 
 using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 /// <summary>
 /// Controls the player's movement in virtual reality.
 /// </summary>
@@ -230,7 +230,12 @@ public class OVRPlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.E))
 			buttonRotation += RotationRatchet;
-	}
+
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick))
+        {
+            SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        }
+    }
 
 	protected virtual void UpdateController()
 	{

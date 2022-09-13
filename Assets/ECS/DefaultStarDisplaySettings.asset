@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb553ebf279ffa14db188c158d85dcfd, type: 3}
+  m_Name: DefaultStarDisplaySettings
+  m_EditorClassIdentifier: 
+  showNamelessStars: 1
+  adjustColorBasedOnSpectra: 1
+  adjustColorBasedOnRedBlueShift: 0
+  redBlueShiftBasedOnCamera: 0
+  scaleStars: 1
+  scaleByAbsoluteMagnitude: 1
+  adjustBrightness: 1
+  showDataText: 1
+  showNameOnly: 1
+  showVelocityVectors: 0
+  showConstellationLines: 1
+  showClusterColors: 0
+  useLODModel: 1
+  favorQualityOverPerformance: 1
+  playMusic: 0
+  distanceLimit: 10000
+  sizeScalar: 0.02
+  distanceScalar: 40.201668
